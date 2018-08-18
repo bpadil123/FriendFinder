@@ -1,132 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Survey Page</title>
-
+  <title>Friend Finder</title>
   <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 </head>
+
 <body>
-
   <div class="container">
-
-    <div class="jumbotron">
-      <h1 class="text-center"><span class="fa fa-fire"></span>FriendFinder</h1>
-      <hr>
-      <h2 class="text-center">Time to Mingle... Please fill out this survery first.</h2>
-      <br>
-
-      <div class="text-center">
+    <div class="col-md-12">
+      <h1>Survey Questions</h1>
+      <div class="text-right">
         <a href="/"><button class="btn btn-lg btn-default"><span class="fa fa-home"></span></button></a>
       </div>
+      <hr/>
     </div>
 
-    <div class="row">
-      <div class="col-lg-12">
-
-        <!-- Reservation Page -->
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">FriendFinder Survey</h4>
-          </div>
-          <div class="panel-body">
-
-            <form role="form">
-
-              <div class="form-group">
-                <label for="reserve-name">Name</label>
-                <input type="text" class="form-control" id="reserve-name">
-              </div>
-
-              <div class="form-group">
-                <label for="reserve-phone">Phone Number</label>
-                <input type="text" class="form-control" id="reserve-phone">
-              </div>
-
-              <div class="form-group">
-                <label for="reserve-email">Email</label>
-                <input type="text" class="form-control" id="reserve-email">
-              </div>
-
-              <div class="form-group">
-                <label for="reserve-unique-id">Unique ID</label>
-                <input type="text" class="form-control" id="reserve-unique-id">
-              </div>
-
-              <button type="submit" class="btn btn-primary submit">Submit</button>
-            </form>
-
-          </div>
+    <div class="col-md-12">
+      <h2>About You</h2>
+      <form id="survey">
+        <div class="form-group">
+          <label for="Name">Name (Required)</label>
+          <input type="text" class="form-control" id="name" aria-describedby="nameField" required=""></input>
         </div>
-
-      </div>
+        <div class="form-group">
+          <label for="Image">Link to Photo Image (Required)</label>
+          <input type="url" class="form-control" id="image" aria-describedby="imageField" required=""></input>
+        </div>
+        <hr>
+        <!--Question One-->
+        <div class="form-group">
+          <label for="questionOne">
+            <h3>Question 1</h3>
+            <p>How tolerable are you with an ongoing prank war? </p>
+          </label>
+          <select class="form-control" id="questionOne" style="width: 180px;">
+            <option></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>
+        </div>
+        <!--Question Two-->
+        <div class="form-group">
+          <label for="questionTwo">
+            <h3>Question 2</h3>
+            <p>How would you rate your current morale in the workplace?</p>
+          </label>
+          <select class="form-control" id="questionTwo" style="width: 180px;">
+            <option></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>
+        </div>
+        <!--Question Three-->
+        <div class="form-group">
+          <label for="questionThree">
+            <h3>Question 3</h3>
+            <p>How do you feel about the paper industry? </p>
+          </label>
+          <select class="form-control" id="questionThree" style="width: 180px;">
+            <option></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>
+        </div>
+        <!--Question Four-->
+        <div class="form-group">
+          <label for="questionFour">
+            <h3>Question 4</h3>
+            <p>Is it ok to have romantic relations with a co-worker (secret or public)?</p>
+          </label>
+          <select class="form-control" id="questionFour" style="width: 180px;">
+            <option></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>
+        </div>
+        <!--Question Five-->
+        <div class="form-group">
+          <label for="questionFive">
+            <h3>Question 5</h3>
+            <p>Is professional growth of interest to you? </p>
+          </label>
+          <select class="form-control" id="questionFive" style="width: 180px;">
+            <option></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>
+        </div>
+        <!--Question Six-->
+        <div class="form-group">
+          <label for="questionSix">
+            <h3>Question 6</h3>
+            <p>Do you view your coworkers as friends?</p>
+          </label>
+          <select class="form-control" id="questionSix" style="width: 180px;">
+            <option></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>
+        </div>
+        <!--Question Seven-->
+        <div class="form-group">
+          <label for="questionSeven">
+            <h3>Question 7</h3>
+            <p>Is 'that what she said’?</p>
+          </label>
+          <select class="form-control" id="questionSeven" style="width: 180px;">
+            <option></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>
+        </div>
+        <!--Question Eight-->
+        <div class="form-group">
+          <label for="questionEight">
+            <h3>Question 8</h3>
+            <p>Are you easily offended?</p>
+          </label>
+          <select class="form-control" id="questionEight" style="width: 180px;">
+            <option></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>
+        </div>
+        <!--Question Nine-->
+        <div class="form-group">
+          <label for="questionNine">
+            <h3>Question 9</h3>
+            <p>You feel more energetic after spending time with a group of people.</p>
+          </label>
+          <select class="form-control" id="questionNine" style="width: 180px;">
+            <option></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>
+        </div>
+        <!--Question Ten-->
+        <div class="form-group">
+          <label for="questionTen">
+            <h3>Question 10</h3>
+            <p>You like to go on spontaneous adventures.</p>
+          </label>
+          <select class="form-control" id="questionTen" style="width: 180px;">
+            <option></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>
+          <br/>
+          <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">Submit</button>
+          <hr/>
+        </div>
+      </form>
     </div>
 
-
-    <footer class="footer">
-      <div class="container">
-          <!-- NEED TO UPDATE THIS -->
-        <p><a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a> | <a href="https://github.com/afhaque/HotRestaurant">GitHub Repo</a></p>
-      </div>
-    </footer>
-
+    <div class="col-md-12" style="margin-bottom: 5%;">
+      <a href="/">Start Over</a> |
+      <a href="../data/officeCharacters" target="_blank">API Friends List</a> |
+      <a href="https://github.com/bpadil123/FriendFinder" target="_blank>">GitHub Repo</a>
+    </div>
   </div>
 
+  <div id="results" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">X</button>
+          <h2 class="modal-title">
+            <b>Best Match</b>
+          </h2>
+        </div>
+        <div class="modal-body">
+          <h3 id="matchName"></h3>
+          <img id="matchImage" src="" alt="">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
+
 </html>
 
-<!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
 <script type="text/javascript">
+  //Get form input from user
+  $("#submit").on("click", function (event) {
+    event.preventDefault();
+    console.log("Submit Button Clicked");
 
-    // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
-    // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
-    // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
-    // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
+    //Create an object for the user's data.
+    let userData = {
+      name: $("#name").val(),
+      image: $("#image").val(),
+      scores: [
+        $("#questionOne").val(),
+        $("#questionTwo").val(),
+        $("#questionThree").val(),
+        $("#questionFour").val(),
+        $("#questionFive").val(),
+        $("#questionSix").val(),
+        $("#questionSeven").val(),
+        $("#questionEight").val(),
+        $("#questionNine").val(),
+        $("#questionTen").val()
+      ]
+    };
 
-    $(".submit").on("click", function(event) {
-      event.preventDefault();
+    //Checking user input.
+    console.log("User name after click: " + userData.name);
+    console.log("Image URL:  " + userData.image);
+    console.log("User scores: " + userData.scores);
 
-      // Here we grab the form elements
-      var newFriend = {
-        customerName: $("#reserve-name").val().trim(),
-        phoneNumber: $("#reserve-phone").val().trim(),
-        customerEmail: $("#reserve-email").val().trim(),
-        customerID: $("#reserve-unique-id").val().trim()
-      };
-
-      console.log(newFriend);
-
-      // This line is the magic. It"s very similar to the standard ajax function we used.
-      // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-      // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
-      // depending on if a tables is available or not.
-
-      $.post("/api/tables", newFriend,
-        function(data) {
-
-          // If a table is available... tell user they are booked.
-          if (data) {
-            alert("Yay! You are officially booked!");
-          }
-
-          // If a table is available... tell user they on the waiting list.
-          else {
-            alert("Sorry you are on the wait list");
-          }
-
-          // Clear the form when submitting
-          $("#reserve-name").val("");
-          $("#reserve-phone").val("");
-          $("#reserve-email").val("");
-          $("#reserve-unique-id").val("");
-
-        });
-
+    //AJAX post to send the data to the Friends API.
+    $.post("/api/friends", userData, function (data) {
+      if (data) {
+        $("#matchName").text(data.name);
+        console.log("#matchName: " + data.name)
+        $("#matchImage").attr("src", data.image);
+        $("#results").modal("toggle");
+      }
     });
-
+  });
 </script>

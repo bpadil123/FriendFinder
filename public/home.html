@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Home Page</title>
 
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Friend Finder</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 </head>
+
 <body>
+    <div class="container">
+        <div class="jumbotron" style="text-align: center;">
+            <h1>
+                <span>
+                    <i class="fas fa-user-friends"></i></i>
+                </span>&nbsp;OfficeFinder</h1>
+            <hr class="thin" />
+            <h3>Which character from The Office are you most like? Lets find out!</h3>
+            <br/>
+            
+            <a href="/survey">
+                <button class="btn btn-primary btn-lg" id="viewTables">
+                    <span class="fa fa-th-list"></span>&nbsp; Start Survey</button>
+            </a>
+        </div>
 
-  <div class="container">
-
-    <div class="jumbotron">
-      <h1 class="text-center"><span class="fa fa-fire"></span>FriendFinder</h1>
-      <hr>
-      <h2 class="text-center">You need friends... We got you!</h2>
-      <br>
-
-      <div class="text-center">
-        <a href="/survey"><button class="btn btn-lg btn-primary"><span class="fa fa-list-alt"></span> View Tables</button></a>
-      </div>
-
+        <div class="col-md-12">
+            <a href="/api/friends" target="_blank">API Friends List</a> |
+            <a href="https://github.com/bpadil123/FriendFinder" target="_blank>">GitHub Repo</a>
+        </div>
     </div>
-
-    <footer class="footer">
-      <div class="container">
-<!-- NEED TO UPDATE THIS -->
-        <p><a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a> | <a href="https://github.com/afhaque/HotRestaurant">GitHub Repo</a></p>
-      </div>
-    </footer>
-
-  </div>
-
-
 </body>
-</html>
