@@ -1,58 +1,38 @@
-// ===============================================================================
-// LOAD DATA
-// We are linking our routes to a series of "data" sources.
-// These data sources hold arrays of information on table-data, waitinglist, etc.
-// ===============================================================================
+// Requiring friends.js file.
+let officeCharacters = require("../app/data/officeCharacters");
 
-var userData = require("../app/data/friends");
+//
+module.exports = function (app) {
+    //Get route with url /api/firends. This will be used to display all possible friends.
+    app.get("/api/officeCharacters", function (req, res) {
+        return res.json(officeCharacters)
+    });
 
-
-// ===============================================================================
-// ROUTING
-// ===============================================================================
-
-module.exports = function(app) {
-  // API GET Requests
-  // Below code handles when users "visit" a page.
-  // In each of the below cases when a user visits a link
-  // (ex: localhost:PORT/api/admin... they are shown a JSON of the data in the table)
-  // ---------------------------------------------------------------------------
-
-  app.get("/api/survey", function(req, res) {
-    res.json(userData);
-  });
-
-
-
-  // API POST Requests
-  // Below code handles when a user submits a form and thus submits data to the server.
-  // In each of the below cases, when a user submits form data (a JSON object)
-  // ...the JSON is pushed to the appropriate JavaScript array
-  // (ex. User fills out a reservation request... this data is then sent to the server...
-  // Then the server saves the data to the tableData array)
-  // ---------------------------------------------------------------------------
-
-  app.post("/api/officeCharacters", function(req, res) {
-    // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
-    // It will do this by sending out the value "true" have a table
-    // req.body is available since we're using the body-parser middleware
-
-    // DO NOT THINK WE NEED AN IF STATEMENT HERE... PROBS NEED SOMETHING ELSE
-    if (userData.length < 5) {
-      userData.push(req.body);
-      res.json(true);
-    }
-
-  });
-
-  // ---------------------------------------------------------------------------
-  // I added this below code so you could clear out the table while working with the functionality.
-  // Don"t worry about it!
-
-  app.post("/api/clear", function() {
-    // Empty out the arrays of data
-    userData = [];
-
-    console.log(userData);
-  });
+    //Post route to handle incoming survey results and handle combatibility results.
+    app.post("/api/officeCharacters", function (req, res) {
+        let newUser = req.body;
+        console.log("New friend data: " + newUser);
+        let goodMatch;
+        let matchDifference = Infinity;
+        //Getting total for friends
+        for (let i = 0; i < officeCharacters.length; i++) {
+            let userTotal = 0;
+            let listTotal = 0;
+            for (let j = 0; j < officeCharacters[i].scores.length; j++) {
+                listTotal += parseInt(officeCharacters[i].scores[j]);
+                userTotal += parseInt(newUser.scores[j]);
+                console.log("New Friend Score" + newUser.scores[j]);
+            }
+            console.log("Friends Total: " + listTotal);
+            console.log("new Friend total: " + userTotal);
+            let difference = Math.abs(listTotal - userTotal);
+            console.log("Difference: " + difference);
+            if (difference < matchDifference) {
+                goodMatch = officeCharacters[i];
+                matchDifference = difference;
+            }
+        }
+        officeCharacters.push(newUser);
+        res.json(goodMatch)
+    })
 };
