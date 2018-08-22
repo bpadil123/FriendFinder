@@ -33,7 +33,9 @@ module.exports = function (app) {
             }
         }
         officeCharacters.push(newUser);
+        console.log("Below push for api data: " + JSON.stringify(newUser));
+
         res.json(goodMatch)
-        // res.send(goodMatch)
+        console.log("res.json: " + JSON.stringify(goodMatch));
     })
 };
