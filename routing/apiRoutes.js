@@ -34,5 +34,6 @@ module.exports = function (app) {
         }
         officeCharacters.push(newUser);
         res.json(goodMatch)
+        // res.send(goodMatch)
     })
 };
